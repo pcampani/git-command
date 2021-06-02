@@ -51,7 +51,7 @@ class GitCommand {
         else if(path_file === ".") {
             this.working_directory.new_changes = this.staging;
         }
-        //Still to fix condition
+        //To fix condition on how to access staging variable
         else if(path_file === "*") {
             let directory = modified_files;     
             for(let key in directory) {
