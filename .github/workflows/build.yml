@@ -3,7 +3,7 @@ name: Build CI
 on:
   push:
     branches: [ master, develop, feature/git_add_all ]
-  pull: 
+  pull_request: 
     branches: [ master, develop, feature/git_add_all ]
 
 jobs:
