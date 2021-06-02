@@ -18,6 +18,16 @@ describe("Testing GitCommand.status()", function(){
         expect(output).to.equal('You have 2 change/s.\nviews/index.html\nassets/scripts/index.js');
     });
 
+    it('Should return information if has changes in directory', function(){
+        let wd = new WorkingDirectory();
+        wd.addFile("login.html", "views", "<html>Login</html>");
+
+        let git = new GitCommand(wd);
+        let output = git.status();
+
+        expect(output).to.equal('You have 1 change/s.\nviews/login.html');
+    });
+
     it('Should return information if no changes in directory', function(){
         let wd = new WorkingDirectory();
         let git = new GitCommand(wd);
@@ -72,6 +82,7 @@ describe("Testing GitCommand.add()", function(){
         expect(output_status).to.equal('You have 0 change/s.\n');
     });
 
+
     it('Should success with path_file "*"', function(){
         let wd = new WorkingDirectory();
         wd.addFile("index.html", "views", "<html>Hello</html>");
@@ -86,4 +97,5 @@ describe("Testing GitCommand.add()", function(){
         expect(output_add).to.equal('Successfully added as index file/s.');
         expect(output_status).to.equal('You have 1 change/s.\n.github/workflows/actions.yml');
     });
+    
 })

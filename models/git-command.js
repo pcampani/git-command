@@ -55,7 +55,8 @@ class GitCommand {
             let directory = modified_files;     
             for(let key in directory) {
                 if(key !== "views/index.html") {
-                    this.working_directory.new_changes = {[key]: directory[key]};
+                    this.staging.push({[key]: directory[key]});
+                    this.working_directory.new_changes = this.staging[0];
                 }
             }
         }
