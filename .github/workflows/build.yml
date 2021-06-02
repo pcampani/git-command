@@ -4,7 +4,7 @@ on:
   push:
     branches: [ master, develop, feature/git_add_all ]
   pull: 
-	branches: [ master, develop, feature/git_add_all ]
+    branches: [ master, develop, feature/git_add_all ]
 
 jobs:
   build:
