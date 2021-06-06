@@ -51,7 +51,7 @@ class GitCommand {
         else if(path_file === ".") {
             this.working_directory.new_changes = this.staging;
         }
-        //Still to fix condition
+        //To fix condition on how to access staging variable
         else if(path_file === "*") {
             let directory = modified_files;     
             for(let key in directory) {
@@ -67,7 +67,7 @@ class GitCommand {
         return "Successfully added as index file/s.";
     }
 
-    //Command: git commit -m "<message>"
+    //Command: git commit -m "<message>" for commits
     commit(message){
         if(this.staging.length > 0){
             this.local_repository.push({ "message": message, "files": this.staging });
