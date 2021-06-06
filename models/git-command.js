@@ -67,7 +67,7 @@ class GitCommand {
         return "Successfully added as index file/s.";
     }
 
-    //Command: git commit -m "<message>"
+    //Command: git commit -m "<message>" for commits
     commit(message){
         if(this.staging.length > 0){
             this.local_repository.push({ "message": message, "files": this.staging });
